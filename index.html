@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Vue Js Template </title>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+
+<body>
+    <div id="obj">
+        <input type="text" v-on:input="onchangeValue">
+        <p v-once>
+            Noi dung ban dau : {{ content }} <br>
+            Noi dung thay doi : {{ showPost() }}
+        </p><br>
+        <!-- Cach de hien thi html o trong data cua obj ra ngoai  -->
+        <p v-html="testMaHtml"></p><br>
+        <a v-bind:href="link_facebook">My Facebook</a>
+        <p>{{ sayHello() }}</p><br>
+        <p>{{ showPost() }}</p>
+    </div>
+
+    <!-- binding data de truy cap va sua doi gia tri cua cac attribute cua cac the html, 
+        cu phap tren tag html v-bind:nameTagHtml -->
+    <script>
+        //tat ca du lieu truyen qua HTML deu o dang du lieu tho 
+        new Vue({
+            el: "#obj",
+            data: {
+                content: " Hello app lab VueJs",
+                body: "Noi dung body",
+                title: "B A I V I E T",
+                link_facebook: "https://www.facebook.com/haquangjr",
+                testMaHtml: '<a href="https://www.facebook.com">Link Facebook</a>'
+            },
+            methods: {
+                onchangeValue: function (event) {
+                    this.content = event.target.value;
+                },
+                sayHello: function () {
+                    document.write("say hello yoyo !")
+                },
+                showPost: function () {
+                    this.content = "ABC...XYZ"
+                    return this.content;
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

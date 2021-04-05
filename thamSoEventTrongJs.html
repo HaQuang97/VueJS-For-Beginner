@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Vue Js Template </title>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+
+<body>
+    <div id="obj">
+        <div v-on:mouseover="tinhToaDo">
+            <p>Bam nut de tang gia tri</p>
+            <button v-on:click="tangGiaTri">Start</button>
+            <button v-on:click="reSet">ReSet</button>
+            <p>Gia tri: {{ count }}</p><br>
+            <p>Su kien di chuyen chuot</p>
+            <p>Toa do cua chuot : x = {{ x }} -- y = {{ y }}</p><br>
+
+            <span v-on:mouseover="dungChuot">
+                Hover De Dung Su Kien Chuot
+            </span>
+            <!-- cach 2 
+            <span v-on:mouseover.stop=" ">
+                Hover De Dung Su Kien Chuot
+            </span>-->
+
+        </div>
+    </div>
+
+    <!-- binding data de truy cap va sua doi gia tri cua cac attribute cua cac the html, 
+        cu phap tren tag html v-bind:nameTagHtml -->
+    <script>
+        //tat ca du lieu truyen qua HTML deu o dang du lieu tho 
+        new Vue({
+            el: "#obj",
+            data: {
+                count: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                tangGiaTri: function () {
+                    this.count++
+                },
+                reSet: function () {
+                    this.count = 0
+                },
+                tinhToaDo: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dungChuot: function (event) {
+                    this.x = 0;
+                    this.y = 0;
+                    event.stopPropagation(); //dung su kien ma dang gan cho event
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

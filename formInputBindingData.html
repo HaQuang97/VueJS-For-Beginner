@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Vue Js Template </title>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-model se lam thay doi gia tri cua name trong the p -->
+        <input type="text" v-model="name" placeholder="edit here">
+        <p> Result: {{ name }}</p>
+    </div>
+
+    <!-- binding data de truy cap va sua doi gia tri cua cac attribute cua cac the html, 
+        cu phap tren tag html v-bind:nameTagHtml -->
+    <script>
+        //tat ca du lieu truyen qua HTML deu o dang du lieu tho 
+        new Vue({
+            el: "#app",
+            data: {
+                name: ""
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
