@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Vue Js Template </title>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <p>Gia tri cua A: {{ tangA }}</p>
+        <p>Gia tri cua B: {{ tangB }}</p>
+        <button @click="a++">Tang A</button>
+        <button @click="b++">Tang B</button>
+        <button @click="reSet">Reset</button>
+    </div>
+
+    <!-- binding data de truy cap va sua doi gia tri cua cac attribute cua cac the html, 
+        cu phap tren tag html v-bind:nameTagHtml -->
+    <script>
+        //tat ca du lieu truyen qua HTML deu o dang du lieu tho 
+        // computed thuc hienj nhu 1 function nhung no chi duoc coi la 1 property
+        // Computed se duoc chay truoc Methods
+        new Vue({
+            el: "#app",
+            data: {
+                a: 0,
+                b: 0
+            },
+
+            computed: {
+                tangA () {
+                    console.log("gia tri cua a : " + this.a)
+                    return this.a;
+                },
+
+                tangB () {
+                    console.log("gia tri cua b : " + this.b)
+                    return this.b;
+                },
+
+               
+            },
+
+            methods: {
+                reSet () {
+                    this.a = 0;
+                    this.b = 0;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

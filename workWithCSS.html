@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Vue Js Template </title>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <style type="text/css">
+        .shape {
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="shape" @click="colorRed = !colorRed" :class="{red: colorRed}"></div>
+        <div class="shape" @click="shape2" :class="{red: colorRed}"></div>
+        <div class="shape" @click="colorGreen = !colorGreen" :class="{green: colorGreen}"></div>
+        <div class="shape" :class="{red: colorRed}"></div>
+    </div>
+
+    <script>
+
+        // Phan biet clich giua cac shape voi computed, 
+        // Neu khong phai la shape 3 thi chuyen het sang mau Red
+        // Click vao shape 3 thi chuyen sang mau Green
+
+        new Vue({
+            el: "#app",
+            data: {
+                colorRed: false,
+                colorBlue: false,
+                colorYellow: false,
+                colorGreen: false
+            },
+            methods: {
+
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -8,24 +8,30 @@
 
 <body>
     <div id="app">
-        <!-- v-model se lam thay doi gia tri cua name trong the p -->
-        <input type="text" v-model="name" placeholder="edit here">
-        <p> Result: {{ name }}</p>
+        <p>{{ diem }}</p>
     </div>
 
     <!-- binding data de truy cap va sua doi gia tri cua cac attribute cua cac the html, 
         cu phap tren tag html v-bind:nameTagHtml -->
     <script>
         //tat ca du lieu truyen qua HTML deu o dang du lieu tho 
-        new Vue({
+        // Theo doi bien voi Watch
+        // watch theo doi su thay doi cua bien de lam 1 hanh dong nao do
+        var app = new Vue({
             el: "#app",
             data: {
-                name: "Ha Thanh Quang"
+                diem: "Ban A co diem la 7"
             },
-            methods: {
 
+            watch: {
+                diem(newValue) {
+                    alert("Diem cua ban A da duoc cap nhat !");
+                }
             }
         });
+
+        // Vo tinh co giao vien khac vao nhap lai diem cua ban A 
+        app.diem = "Ban A co diem la 9"
     </script>
 </body>
 
